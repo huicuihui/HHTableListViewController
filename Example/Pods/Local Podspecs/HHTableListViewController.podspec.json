@@ -1,0 +1,33 @@
+{
+  "name": "HHTableListViewController",
+  "version": "0.1.0",
+  "summary": "A short description of HHTableListViewController.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/805988356@qq.com/HHTableListViewController",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "805988356@qq.com": "805988356@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/805988356@qq.com/HHTableListViewController.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "HHTableListViewController/Classes/**/*",
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "MJRefresh": [
+
+    ],
+    "Masonry": [
+
+    ]
+  }
+}

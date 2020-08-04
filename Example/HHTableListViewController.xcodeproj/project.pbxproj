@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B6A34AC24D9721300B56B4A /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A34AA24D9721200B56B4A /* TestViewController.m */; };
 		4FF7EF7541DAB1E6BD9E2202 /* Pods_HHTableListViewController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE5BD2BCD10602E5E4C2124 /* Pods_HHTableListViewController_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		13AB10304C55A30EB220CECC /* Pods-HHTableListViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHTableListViewController_Tests.release.xcconfig"; path = "Target Support Files/Pods-HHTableListViewController_Tests/Pods-HHTableListViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1B6A34AA24D9721200B56B4A /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		1B6A34AB24D9721200B56B4A /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HHTableListViewController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHTableListViewController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -57,16 +60,16 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		6CCFCEAF7F8D3E5EA9BFAA7F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		6CCFCEAF7F8D3E5EA9BFAA7F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E7A7C168533D2F614E35C79 /* Pods-HHTableListViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHTableListViewController_Example.debug.xcconfig"; path = "Target Support Files/Pods-HHTableListViewController_Example/Pods-HHTableListViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		93359BF16B0AAEB50D63486F /* HHTableListViewController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HHTableListViewController.podspec; path = ../HHTableListViewController.podspec; sourceTree = "<group>"; };
+		93359BF16B0AAEB50D63486F /* HHTableListViewController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HHTableListViewController.podspec; path = ../HHTableListViewController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CDEA1229C2ABB91B5BE63CA2 /* Pods-HHTableListViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHTableListViewController_Example.release.xcconfig"; path = "Target Support Files/Pods-HHTableListViewController_Example/Pods-HHTableListViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D27F57C5715CDDD811046D32 /* Pods_HHTableListViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HHTableListViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE5BD2BCD10602E5E4C2124 /* Pods_HHTableListViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HHTableListViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6708B2B0F742567F844831F /* Pods-HHTableListViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHTableListViewController_Tests.debug.xcconfig"; path = "Target Support Files/Pods-HHTableListViewController_Tests/Pods-HHTableListViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FAFD50EBF4CE523105A4E5D2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FAFD50EBF4CE523105A4E5D2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* HHViewController.h */,
 				6003F5A6195388D20070C39A /* HHViewController.m */,
+				1B6A34AB24D9721200B56B4A /* TestViewController.h */,
+				1B6A34AA24D9721200B56B4A /* TestViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -193,7 +198,6 @@
 				F6708B2B0F742567F844831F /* Pods-HHTableListViewController_Tests.debug.xcconfig */,
 				13AB10304C55A30EB220CECC /* Pods-HHTableListViewController_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +262,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -302,11 +307,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HHTableListViewController_Example/Pods-HHTableListViewController_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/HHTableListViewController/HHTableListViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HHTableListViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -366,6 +377,7 @@
 			files = (
 				6003F59E195388D20070C39A /* HHAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* HHViewController.m in Sources */,
+				1B6A34AC24D9721300B56B4A /* TestViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 #import "HHViewController.h"
+#import "TestViewController.h"
 
 @interface HHViewController ()
 
@@ -18,8 +19,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.backgroundColor = [UIColor redColor];
+    button.frame = CGRectMake(100, 200, 100, 80);
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
 }
-
+- (void)test
+{
+    TestViewController *vc = [[TestViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

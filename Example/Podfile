@@ -1,9 +1,14 @@
 use_frameworks!
 
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '8.0'
 
 target 'HHTableListViewController_Example' do
   pod 'HHTableListViewController', :path => '../'
+  pod 'MJRefresh' # 下拉刷新, 上拉加载
+  pod 'Masonry' # 布局
+  pod 'AFNetworking' # 网络请求框架
 
   target 'HHTableListViewController_Tests' do
     inherit! :search_paths

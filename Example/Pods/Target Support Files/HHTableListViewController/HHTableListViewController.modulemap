@@ -1,0 +1,6 @@
+framework module HHTableListViewController {
+  umbrella header "HHTableListViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}
