@@ -132,7 +132,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (self.didScroll) {
-        self.didScroll();
+        self.didScroll(scrollView);
     }
     
     if (!_lastCell.shouldResponseToTouch || !_shouldFetch) {

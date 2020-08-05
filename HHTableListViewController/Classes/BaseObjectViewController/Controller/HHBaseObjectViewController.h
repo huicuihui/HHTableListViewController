@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)void (^didRefreshSucceed)(void);
 @property (nonatomic, copy)void (^didAddObjects)(void);
 @property (nonatomic, copy)void (^tableWillReload)(NSUInteger responseObjectsCount);
-@property (nonatomic, copy)void (^didScroll)(void);
+@property (nonatomic, copy)void (^didScroll)(UIScrollView *scrollView);
 @property (nonatomic, copy)void (^tapLastCell)(void);
 
 @property (nonatomic, assign)NSUInteger offset;
