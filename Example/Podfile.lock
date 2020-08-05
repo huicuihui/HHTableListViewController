@@ -1,28 +1,28 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - HHTableListViewController (0.1.0):
-    - AFNetworking
+    - AFNetworking (~> 4.0)
     - Masonry
     - MJRefresh
   - Masonry (1.1.0)
   - MJRefresh (3.4.3)
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (~> 4.0)
   - HHTableListViewController (from `../`)
   - Masonry
   - MJRefresh
@@ -38,11 +38,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  HHTableListViewController: e001c44ca76e8ff47ad19e384ce6f9070b24951e
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  HHTableListViewController: af7658c9d4acffd6a89e3ed0da1ab3b66dd677d1
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
 
-PODFILE CHECKSUM: 50aa1c987782a0f5bcc764dcb413fb192f41848d
+PODFILE CHECKSUM: 2a82cbd89130b3fa9e0d1927955a4b9197f97cba
 
 COCOAPODS: 1.8.4

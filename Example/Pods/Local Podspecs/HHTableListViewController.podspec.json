@@ -1,9 +1,9 @@
 {
   "name": "HHTableListViewController",
   "version": "0.1.0",
-  "summary": "A short description of HHTableListViewController.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/805988356@qq.com/HHTableListViewController",
+  "summary": "封装tableView基类",
+  "description": "封装tableView基类 刷新自动加载更多",
+  "homepage": "https://github.com/huicuihui/HHTableListViewController",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "805988356@qq.com": "805988356@qq.com"
   },
   "source": {
-    "git": "https://github.com/805988356@qq.com/HHTableListViewController.git",
+    "git": "https://github.com/huicuihui/HHTableListViewController.git",
     "tag": "0.1.0"
   },
   "platforms": {
@@ -21,7 +21,7 @@
   "source_files": "HHTableListViewController/Classes/**/*",
   "dependencies": {
     "AFNetworking": [
-
+      "~> 4.0"
     ],
     "MJRefresh": [
 
