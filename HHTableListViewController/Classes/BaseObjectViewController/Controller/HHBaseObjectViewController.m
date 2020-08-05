@@ -235,9 +235,9 @@
     };
     
     if (self.useGetMethod) {
-        [_manager GET:self.generateURL(offset) parameters:nil progress:nil success:successCallback failure:failureCallback];
+        [_manager GET:self.generateURL(offset) parameters:nil headers:nil progress:nil success:successCallback failure:failureCallback];
     } else {
-        [_manager POST:self.generateURL(offset) parameters:self.generateParameters(offset) progress:nil success:successCallback failure:failureCallback];
+        [_manager POST:self.generateURL(offset) parameters:self.generateParameters(offset) headers:nil progress:nil success:successCallback failure:failureCallback];
     }
 }
 
