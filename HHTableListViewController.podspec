@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
 
   s.description      = '封装tableView基类 刷新自动加载更多'
 
-  s.homepage         = 'https://github.com/805988356@qq.com/HHTableListViewController'
+  s.homepage         = 'https://github.com/huicuihui/HHTableListViewController'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '805988356@qq.com' => '805988356@qq.com' }
-  s.source           = { :git => 'https://github.com/805988356@qq.com/HHTableListViewController.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/huicuihui/HHTableListViewController.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
