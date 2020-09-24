@@ -7,9 +7,9 @@
 //
 
 #import "TestViewController.h"
-#import "HHObjectListViewController.h"
-@interface TestViewController ()<HHTableViewDelegate>
-@property (nonatomic, strong)HHObjectListViewController *listVC;
+#import <HHBaseObjectViewController.h>
+@interface TestViewController ()<HHTableViewDelegate,FetchObjectDelegate>
+@property (nonatomic, strong)HHBaseObjectViewController *listVC;
 @end
 
 @implementation TestViewController
@@ -18,13 +18,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.translucent = NO;
-    self.listVC = [[HHObjectListViewController alloc]init];
-    self.listVC.delegate = self;
+    self.listVC = [[HHBaseObjectViewController alloc]init];
+    self.listVC.tableViewDelegate = self;
+    self.listVC.fetchObjectDelegate = self;
     [self addChildViewController:self.listVC];
     [self.view addSubview:self.listVC.view];
     self.listVC.view.frame = self.view.bounds;
     
     [self.listVC.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    self.listVC.didScroll = ^{
+        //
+    };
 }
 
 #pragma mark - delegate
@@ -39,7 +43,7 @@
 {
     return 99;
 }
-- (void)fetchObjectWithListViewController:(HHObjectListViewController *)listVC
+- (void)fetchObjectWithListViewController:(HHBaseObjectViewController *)listVC
                                 tableView:(UITableView *)tableView
                                   refresh:(BOOL)refresh
 {

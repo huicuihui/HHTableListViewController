@@ -45,9 +45,6 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableView.backgroundColor = [UIColor whiteColor];
     
-    _lastCell = [[HHLastCell alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, TableLastCellHeight)];
-    [_lastCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLastCellAction)]];
-    self.tableView.tableFooterView = _lastCell;
     self.tableView.sectionHeaderHeight = 0.1;
     self.tableView.sectionFooterHeight = 0.1;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -98,12 +95,37 @@
     }
 }
 
-#pragma mark - Table view data source
-
+#pragma mark - tableView delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _objects.count;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.tableViewDelegate && [self.tableViewDelegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
+        return [self.tableViewDelegate tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+    return CGFLOAT_MIN;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    if (self.tableViewDelegate && [self.tableViewDelegate respondsToSelector:@selector(tableView:cellForRowAtIndexPath:)]) {
+            return [self.tableViewDelegate tableView:tableView cellForRowAtIndexPath:indexPath];
+    } else {
+        NSAssert(false, @"Implement the proxy method");
+        return nil;;
+    }
+    // Configure the cell...
+    
+//    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.tableViewDelegate && [self.tableViewDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+        [self.tableViewDelegate tableView:tableView didSelectRowAtIndexPath:indexPath];
+    }
+}
+
 
 #pragma mark - 刷新
 - (void)refresh
@@ -132,7 +154,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (self.didScroll) {
-        self.didScroll(scrollView);
+        self.didScroll();
     }
     
     if (!_lastCell.shouldResponseToTouch || !_shouldFetch) {
@@ -168,10 +190,13 @@
 
 #pragma mark - 请求数据
 - (void)fetchObjectAfterOffset:(NSUInteger)offset refresh:(BOOL)refresh {
-    if (self.fetchObject) {
-        [self fetchObject:refresh];
+    if (self.fetchObjectDelegate && [self.fetchObjectDelegate respondsToSelector:@selector(fetchObjectWithListViewController:tableView:refresh:)]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.fetchObjectDelegate fetchObjectWithListViewController:self tableView:self.tableView refresh:refresh];
+        });
         return;
     }
+    
     WEAKSELF
     id successCallback = ^void (NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"status"] intValue] == 1) {
@@ -264,8 +289,15 @@
     return nil;
 }
 
-- (void)fetchObject:(BOOL)refresh
+#pragma mark - lazy load
+- (HHLastCell *)lastCell
 {
-    NSAssert(false, @"Override in subclasses");
+    if (!_lastCell) {
+        self.lastCell = [[HHLastCell alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, TableLastCellHeight)];
+        [self.lastCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLastCellAction)]];
+        self.tableView.tableFooterView = self.lastCell;
+    }
+    return _lastCell;
 }
+
 @end

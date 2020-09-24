@@ -13,6 +13,29 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class HHBaseObjectViewController;
+@protocol FetchObjectDelegate <NSObject>
+@optional
+/// 网络请求
+/// @param listVC <#listVC description#>
+/// @param tableView <#tableView description#>
+/// @param refresh <#refresh description#>
+- (void)fetchObjectWithListViewController:(HHBaseObjectViewController *)listVC
+                                tableView:(UITableView *)tableView
+                                  refresh:(BOOL)refresh;
+@end
+
+@protocol HHTableViewDelegate <NSObject>
+@required
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+@optional
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+/// 点击cell
+/// @param tableView <#tableView description#>
+/// @param indexPath <#indexPath description#>
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+@end
+
 @interface HHBaseObjectViewController : UITableViewController
 
 @property (nonatomic, assign)BOOL useGetMethod;
@@ -31,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)void (^didRefreshSucceed)(void);
 @property (nonatomic, copy)void (^didAddObjects)(void);
 @property (nonatomic, copy)void (^tableWillReload)(NSUInteger responseObjectsCount);
-@property (nonatomic, copy)void (^didScroll)(UIScrollView *scrollView);
+@property (nonatomic, copy)void (^didScroll)(void);
 @property (nonatomic, copy)void (^tapLastCell)(void);
 
 @property (nonatomic, assign)NSUInteger offset;
@@ -40,8 +63,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign)int allCount;
 @property (nonatomic, strong)HHLastCell *lastCell;
 
-/// 在子类网络请求
-@property (nonatomic, assign)BOOL fetchObject;
+@property(nonatomic, weak) id <HHTableViewDelegate> tableViewDelegate;
+@property(nonatomic, weak) id <FetchObjectDelegate> fetchObjectDelegate;
 
 - (NSArray *)parseJSON:(id)responseObject;
 
@@ -51,9 +74,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)endRefreshing;
 
-/// 在子类网络请求
-/// @param refresh 是否是刷新
-- (void)fetchObject:(BOOL)refresh;
 @end
 
 NS_ASSUME_NONNULL_END
