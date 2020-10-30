@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "HHLastCell.h"
 
-#define ObjectsPerPage                  10
-
 NS_ASSUME_NONNULL_BEGIN
 
 @class HHBaseObjectViewController;
@@ -57,6 +55,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)void (^didScroll)(void);
 @property (nonatomic, copy)void (^tapLastCell)(void);
 
+/// 每页数量
+@property (nonatomic, assign)NSUInteger objectsPerPage;
 @property (nonatomic, assign)NSUInteger offset;
 @property (nonatomic, assign)NSUInteger refTime;
 @property (nonatomic, strong)NSMutableArray *objects;
@@ -73,6 +73,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)refresh;
 
 - (void)endRefreshing;
+
+- (void)loadSuccessWithRefresh:(BOOL)refresh
+                 ResponseArray:(NSArray *)responseArray;
 
 @end
 

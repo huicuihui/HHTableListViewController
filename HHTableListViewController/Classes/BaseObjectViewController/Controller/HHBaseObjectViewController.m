@@ -28,6 +28,7 @@
     self = [super init];
     if (self) {
         _objects = [NSMutableArray new];
+        _objectsPerPage = 20;
         _offset = 0;
         
         _useGetMethod = YES;
@@ -236,7 +237,7 @@
                 else {
                     if (weakSelf.offset == 0 && objArr.count == 0) {
                        weakSelf.lastCell.status = LastCellStatusEmpty;
-                    } else if (objArr.count < ObjectsPerPage || weakSelf.objects.count >= weakSelf.allCount) {
+                    } else if (objArr.count < weakSelf.objectsPerPage || weakSelf.objects.count >= weakSelf.allCount) {
                         weakSelf.lastCell.status = LastCellStatusFinished;
                     } else {
                         weakSelf.lastCell.status = LastCellStatusMore;
@@ -250,13 +251,11 @@
             [self loadError];
             NSLog(@"%@",responseObject[@"message"]);
         }
-        [self endRefreshing];
     };
     
     id failureCallback = ^void (NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"failureCallback");
         [self loadError];
-        [self endRefreshing];
     };
     
     if (self.useGetMethod) {
@@ -275,6 +274,35 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         self.shouldFetch = YES;
     });
+    [self endRefreshing];
+}
+
+//加载完成，设置状态
+- (void)loadSuccessWithRefresh:(BOOL)refresh
+                 ResponseArray:(NSArray *)responseArray {
+    if (refresh) {
+        [self.objects removeAllObjects];
+    }
+    [self.objects addObjectsFromArray:responseArray];
+    self.offset++;
+    //设置状态
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.objects.count == 0) {
+            self.lastCell.status = LastCellStatusEmpty;
+            UILabel *lab = [[UILabel alloc]init];
+            lab.textAlignment = NSTextAlignmentCenter;
+            lab.text = @"暂无相关数据～";
+            self.lastCell.emptyView.customView = lab;
+            //设置lab的frame
+        } else if (responseArray.count < self.objectsPerPage) {
+            self.lastCell.status = LastCellStatusFinished;
+        } else {
+            self.lastCell.status = LastCellStatusMore;
+        }
+        self.tableView.tableFooterView = self.lastCell;
+        [self.tableView reloadData];
+    });
+    [self endRefreshing];
 }
 
 - (void)endRefreshing

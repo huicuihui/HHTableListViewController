@@ -11,7 +11,6 @@
 #endif
 
 #import "HHBaseObjectViewController.h"
-#import "HHObjectListViewController.h"
 #import "HHEmptyView.h"
 #import "HHLastCell.h"
 

@@ -54,30 +54,9 @@
 
     
     //网络请求成功
-    listVC.offset++;
     NSArray *responseArray = @[@"范德萨发",@"发送到",@"发送到",@"到发萨芬发",@"发发的是非得失",@"发送到",@"发发送到范德萨",@"范德萨",@"规范化发",@"发烫衣服",@"刚发的",@"规范地方法规",@"玉体u哦破"];
-    if (refresh) {
-        [listVC.objects removeAllObjects];
-    }
-    [listVC.objects addObjectsFromArray:responseArray];
-    [tableView reloadData];
     
-    //设置状态
-    if (listVC.objects.count == 0) {
-        listVC.lastCell.status = LastCellStatusEmpty;
-        UILabel *lab = [[UILabel alloc]init];
-        lab.text = @"暂无相关数据～";
-        listVC.lastCell.emptyView.customView = lab;
-        //设置lab的frame
-    } else if (responseArray.count < 20) {
-        listVC.lastCell.status = LastCellStatusFinished;
-    } else {
-        listVC.lastCell.status = LastCellStatusMore;
-    }
-    tableView.tableFooterView = listVC.lastCell;
-    
-    
-    [listVC endRefreshing];
+    [listVC loadSuccessWithRefresh:refresh ResponseArray:responseArray];        
 }
 /*
 #pragma mark - Navigation

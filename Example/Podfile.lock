@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - HHTableListViewController (0.1.0):
+  - HHTableListViewController (0.2.0):
     - AFNetworking (~> 4.0)
     - Masonry
     - MJRefresh
@@ -39,7 +39,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  HHTableListViewController: af7658c9d4acffd6a89e3ed0da1ab3b66dd677d1
+  HHTableListViewController: 5488fa89b798df2c724b93081cac8cb5016ee1eb
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
 

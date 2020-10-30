@@ -1,6 +1,6 @@
 {
   "name": "HHTableListViewController",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "封装tableView基类",
   "description": "封装tableView基类 刷新自动加载更多",
   "homepage": "https://github.com/huicuihui/HHTableListViewController",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/huicuihui/HHTableListViewController.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0"
