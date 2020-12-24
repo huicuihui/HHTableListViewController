@@ -289,11 +289,6 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         if (self.objects.count == 0) {
             self.lastCell.status = LastCellStatusEmpty;
-            UILabel *lab = [[UILabel alloc]init];
-            lab.textAlignment = NSTextAlignmentCenter;
-            lab.text = @"暂无相关数据～";
-            self.lastCell.emptyView.customView = lab;
-            //设置lab的frame
         } else if (responseArray.count < self.objectsPerPage) {
             self.lastCell.status = LastCellStatusFinished;
         } else {

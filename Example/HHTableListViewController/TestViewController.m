@@ -29,6 +29,17 @@
     self.listVC.didScroll = ^{
         //
     };
+    
+    //设置lastCell和空数据
+    self.listVC.lastCell.textLabel.textColor = [UIColor redColor];
+    self.listVC.lastCell.textLabel.font = [UIFont systemFontOfSize:14];
+    UILabel *lab = [[UILabel alloc]init];
+    lab.textAlignment = NSTextAlignmentCenter;
+    lab.text = self.listVC.lastCell.emptyMessage;
+    lab.font = [UIFont systemFontOfSize:14];
+    self.listVC.lastCell.emptyView.customView = lab;
+    //设置lab的frame
+
 }
 
 #pragma mark - delegate
