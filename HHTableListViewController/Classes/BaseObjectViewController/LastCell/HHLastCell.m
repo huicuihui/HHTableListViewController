@@ -6,7 +6,6 @@
 //
 
 #import "HHLastCell.h"
-
 @interface HHLastCell ()
 @property (nonatomic, strong)UIActivityIndicatorView *indicator;
 @end
@@ -24,11 +23,14 @@
 }
 - (void)setLayout {
     _textLabel.textColor = [UIColor redColor];
-    _textLabel = [[UILabel alloc] initWithFrame:self.bounds];
+    _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - kBottomHeight)];
     _textLabel.backgroundColor = [UIColor clearColor];
     _textLabel.textAlignment = NSTextAlignmentCenter;
     _textLabel.font = [UIFont boldSystemFontOfSize:14];
     [self addSubview:_textLabel];
+    
+    UIView *bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, self.bounds.size.height - kBottomHeight, self.bounds.size.width, kBottomHeight)];
+    [self addSubview:bottomView];
     
     _indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _indicator.autoresizingMask = UIViewAutoresizingFlexibleTopMargin  | UIViewAutoresizingFlexibleBottomMargin |

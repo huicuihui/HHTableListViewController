@@ -7,7 +7,10 @@
 
 #import <UIKit/UIKit.h>
 #import "HHEmptyView.h"
-#define TableLastCellHeight             44.0
+///刘海屏
+#define kNoHomeScreen   (UIApplication.sharedApplication.statusBarFrame.size.height >= 44.0)
+#define TableLastCellHeight            (kNoHomeScreen ? 84.0 : 44.0)
+#define kBottomHeight   (kNoHomeScreen ? 40 : 0)  //刘海屏底部留空白
 #define ErrorViewHeight                 300.0
 
 typedef NS_ENUM(NSUInteger, LastCellStatus) {
