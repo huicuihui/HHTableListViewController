@@ -55,10 +55,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)void (^didScroll)(void);
 @property (nonatomic, copy)void (^tapLastCell)(void);
 
-/// 每页数量
+#pragma mark - 分页
+/// 每页个数
 @property (nonatomic, assign)NSUInteger objectsPerPage;
+/// 第几页
 @property (nonatomic, assign)NSUInteger offset;
+/// 时间戳
 @property (nonatomic, assign)NSUInteger refTime;
+
 @property (nonatomic, strong)NSMutableArray *objects;
 @property (nonatomic, assign)int allCount;
 @property (nonatomic, strong)HHLastCell *lastCell;
