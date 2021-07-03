@@ -51,7 +51,7 @@
         self.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:self.imageView];
         [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.mas_equalTo(0);
+            make.center.equalTo(self);
             make.size.mas_equalTo(CGSizeMake(ImageSize, ImageSize));
         }];
     }
